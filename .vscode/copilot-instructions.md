@@ -56,6 +56,10 @@ Guide Copilot to generate concise, type-safe, and modular API code for the Omnia
      // 3. Create git tag v1.1.0
      ```
 
+## Server Package Instructions
+
+See detailed server-specific instructions in `/packages/server/copilot-instructions.txt`
+
 ## Updates
 
 These instructions should evolve alongside the project. Copilot will request updates periodically.

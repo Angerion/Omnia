@@ -1,5 +1,5 @@
 import { api } from "encore.dev/api";
-import log  from "encore.dev/log";
+import log from "encore.dev/log";
 import { CnbExchangeRate } from "./exchange-cnb.js";
 import { EnumCurrency, Currency } from "./exchange.types";
 
@@ -21,7 +21,7 @@ exchangeRateService.getYearlyExchangeRates(new Date().getFullYear().toString());
  * @returns {Promise<void>} A promise that resolves when the exchange rates have been fetched.
  */
 export const getYearlyRates = api(
-  { expose: false, method: "GET", path: "/exchange/:year" },
+  { expose: false, method: "GET", path: "/exchange/:year", tags: ["exchange"] },
   async ({ year }: { year: number }): Promise<void> => {
     await exchangeRateService.getYearlyExchangeRates(year.toString());
   }
@@ -35,7 +35,7 @@ export const getYearlyRates = api(
  * @returns An object containing the exchange rate.
  */
 export const getRate = api(
-  { expose: true, method: "GET", path: "/exchange/:date/:currency" },
+  { expose: true, method: "GET", path: "/exchange/:date/:currency", tags: ["exchange"] },
   async ({ date, currency }: { date: string; currency: string }): Promise<{ rate: number }> => {
     // Convert and validate the `currency` string
     const currencyEnum = validateCurrency(currency);

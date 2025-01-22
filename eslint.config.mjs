@@ -14,6 +14,19 @@ const compat = new FlatCompat({
 });
 
 export default [
+    {
+        ignores: [
+            "**/node_modules/**",
+            "**/dist/**",
+            "**/build/**",
+            "**/coverage/**",
+            "**/packages/server/.encore/build/**",
+            "**/packages/server/dist/**",
+            "**/packages/server/encore.gen/**",
+            "**/*.js",
+            "**/*.mjs"
+        ]
+    },
     ...compat.extends("eslint:recommended", "plugin:@typescript-eslint/recommended"),
     {
         plugins: {
@@ -22,8 +35,14 @@ export default [
 
         languageOptions: {
             parser: tsParser,
+            globals: {
+                process: "readonly"
+            },
         },
 
-        rules: {},
+        rules: {
+            semi: ["error", "always"],
+        },
+        files: ["**/*.ts", "**/*.tsx"],
     },
 ];

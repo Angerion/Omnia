@@ -26,9 +26,9 @@ describe("Exchange Service", () => {
   test("getYearlyRates should fetch yearly exchange rates", async () => {
     const year = 2025;
 
-    await getYearlyRates({year});
+    await getYearlyRates({ year });
 
-    expect(mockGetYearlyExchangeRates).toHaveBeenCalledWith(year);
+    expect(mockGetYearlyExchangeRates).toHaveBeenCalledWith({ year });
   });
 
   test("getRate should fetch exchange rate for a specific date and currency", async () => {
@@ -36,7 +36,7 @@ describe("Exchange Service", () => {
     const currency: Currency = "USD";
     const expectedRate = 1.2345;
 
-    const result = await getRate({date, currency});
+    const result = await getRate({ date, currency });
 
     expect(mockGetExchangeRate).toHaveBeenCalledWith(date, currency);
     expect(result).toEqual({ rate: expectedRate });
