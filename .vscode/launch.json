@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Server",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/packages/server/src/index.ts",
+      "preLaunchTask": "tsc: build - server",
+      "outFiles": ["${workspaceFolder}/packages/server/dist/**/*.js"]
+    },
+    {
+      "name": "Launch Client",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/packages/client/src/main.ts",
+      "preLaunchTask": "tsc: build - client",
+      "outFiles": ["${workspaceFolder}/packages/client/dist/**/*.js"]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "tsc: build - server",
+      "type": "typescript",
+      "tsconfig": "packages/server/tsconfig.json",
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "tsc: build - client",
+      "type": "typescript",
+      "tsconfig": "packages/client/tsconfig.json",
+      "problemMatcher": ["$tsc"]
+    }
+  ],
+  "configurations": [
+
+
+  ]
+}
