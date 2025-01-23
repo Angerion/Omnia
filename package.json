@@ -1,0 +1,32 @@
+{
+  "name": "omnia",
+  "version": "0.1.0",
+  "description": "Modular and type-safe server framework built with Encore.ts for scalable applications",
+  "main": "index.js",
+  "scripts": {
+    "install_deps": "pnpm -r i",
+    "dev": "pnpm dev:server && dev:client",
+    "dev:server": "cd packages/server/ && encore run",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "changeset version",
+    "release": "changeset publish",
+    "version:bump": "node scripts/bump-version.js"
+  },
+  "keywords": [],
+  "author": "Karel \"Angerion\" Čeleda",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.2",
+    "prettier-eslint": "^16.3.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.3"
+  },
+  "private": true
+}

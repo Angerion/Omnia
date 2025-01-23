@@ -1,0 +1,8 @@
+packages:
+  - packages/server
+  - packages/client
+  - packages/worker
+
+shared-workspace-lockfiles: true
+strict-peer-dependencies: true
+# ...existing code...

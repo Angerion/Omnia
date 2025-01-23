@@ -1,5 +1,6 @@
 # Node.js
 node_modules/
+packages/*/node_modules/
 .env
 npm-debug.log*
 yarn-debug.log*
@@ -11,13 +12,6 @@ yarn-error.log*
 dist/
 build/
 coverage/
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
 
 # OS
 .DS_Store
